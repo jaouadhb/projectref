@@ -10,6 +10,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -17,7 +18,7 @@ public class UserController {
 
 
     @GetMapping("/users")
-    public List<Utilisateur> getUsers(@RequestParam("pageNumber") int id)
+    public List<Utilisateur> getUsers()
     {
         return userService.getAllUsers();
     }
